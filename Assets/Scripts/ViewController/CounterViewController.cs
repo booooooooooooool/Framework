@@ -7,6 +7,8 @@ public class CounterViewController : MonoBehaviour
 {
     private Button BtnAdd;
     private Button BtnSub;
+
+    private CountModel mCountModel;
     private void Awake()
     {
         BtnAdd = transform.Find("BtnAdd").GetComponent<Button>();
@@ -15,9 +17,11 @@ public class CounterViewController : MonoBehaviour
     }
     private void Start()
     {
-        CountModel.Instance.Count.OnValueChanged += OnCountChange;
+        mCountModel = CounterApp.Get<CountModel>();
 
-        OnCountChange(CountModel.Instance.Count.Value);
+        mCountModel.Count.OnValueChanged += OnCountChange;
+
+        OnCountChange(mCountModel.Count.Value);
 
         BtnAdd.onClick.AddListener(() =>
         {
@@ -38,13 +42,14 @@ public class CounterViewController : MonoBehaviour
 
     private void OnDestroy()
     {
-        CountModel.Instance.Count.OnValueChanged -= OnCountChange;
+        mCountModel.Count.OnValueChanged -= OnCountChange;
+
+        mCountModel = null;
     }
 
 }
-public class CountModel : Singleton<CountModel>
+public class CountModel
 {
-    private CountModel() { }
 
     public BindableProperty<int> Count = new BindableProperty<int>()
     {

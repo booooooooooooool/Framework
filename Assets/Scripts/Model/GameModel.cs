@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameModel : Singleton<GameModel>
+public class GameModel
 {
-    private GameModel() { }
     public BindableProperty<int> KillCount = new BindableProperty<int> { Value = 0 };
 
     public BindableProperty<int> Gold = new BindableProperty<int> { Value = 0 };

@@ -17,7 +17,5 @@ public class Game : MonoBehaviour
     {
         GameStartEvent.UnRegister(OnGameStart);
     }
-
-
 }
 

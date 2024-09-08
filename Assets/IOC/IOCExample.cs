@@ -8,15 +8,19 @@ public class IOCExample : MonoBehaviour
     {
         var container = new IOCContainer();
 
-        container.Register(new BluetoothManager());
+        container.Register<IBluetoothManager>(new BluetoothManager());
 
-        var bluetoothManager = container.Get<BluetoothManager>();
+        var bluetoothManager = container.Get<IBluetoothManager  >();
 
         bluetoothManager.Connect();
     }
 }
+public interface IBluetoothManager
+{
+    void Connect();
+}
 
-public class BluetoothManager
+public class BluetoothManager : IBluetoothManager
 {
     public void Connect()
     {

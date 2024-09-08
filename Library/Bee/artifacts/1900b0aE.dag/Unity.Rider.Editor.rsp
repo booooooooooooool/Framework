@@ -117,8 +117,8 @@
 -define:ROSLYN_ANALYZER_FIX
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/Users/HP/Documents/unity/SiKi(KuangJia)/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
--r:"C:/Users/HP/Documents/unity/SiKi(KuangJia)/Library/PackageCache/com.unity.ide.rider@3.0.27/Rider/Editor/JetBrains.Rider.PathLocator.dll"
+-r:"E:/hjy/UnityProject/SiKi(KuangJia)/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"E:/hjy/UnityProject/SiKi(KuangJia)/Library/PackageCache/com.unity.ide.rider@3.0.27/Rider/Editor/JetBrains.Rider.PathLocator.dll"
 -r:"E:/Program Files/unity/2021.3.26f1c1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"E:/Program Files/unity/2021.3.26f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"E:/Program Files/unity/2021.3.26f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

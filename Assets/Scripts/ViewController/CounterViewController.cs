@@ -8,7 +8,7 @@ public class CounterViewController : MonoBehaviour
     private Button BtnAdd;
     private Button BtnSub;
 
-    private CountModel mCountModel;
+    private ICounterModel mCountModel;
     private void Awake()
     {
         BtnAdd = transform.Find("BtnAdd").GetComponent<Button>();
@@ -17,7 +17,7 @@ public class CounterViewController : MonoBehaviour
     }
     private void Start()
     {
-        mCountModel = CounterApp.Get<CountModel>();
+        mCountModel = CounterApp.Get<ICounterModel>();
 
         mCountModel.Count.OnValueChanged += OnCountChange;
 
@@ -48,11 +48,27 @@ public class CounterViewController : MonoBehaviour
     }
 
 }
-public class CountModel
-{
 
-    public BindableProperty<int> Count = new BindableProperty<int>()
-    {
+public interface ICounterModel :IModel
+{
+    BindableProperty<int> Count { get;}
+}
+public class CountModel : ICounterModel
+{
+    public void Init()
+    {   
+        var storage = Architecture.GetUtility<IStorage>();
+
+        Count.Value = storage.LoadInt("COUNTER_COUNT", 0);
+        Count.OnValueChanged += count =>
+        {
+            storage.SaveInt("COUNTER_COUNT", count);
+        };
+    }
+    public BindableProperty<int> Count { get; } = new BindableProperty<int>()
+    {   
         Value = 0
     };
+    public IArchitecture Architecture { get; set; }
+
 }

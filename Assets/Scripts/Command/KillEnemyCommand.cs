@@ -2,7 +2,7 @@ public struct KillEnemyCommand : ICommand
 {
     public void Execute()
     {
-        var gamemode = PointGame.Get<GameModel>();
+        var gamemode = PointGame.Get<IGameModel>();
 
         gamemode.KillCount.Value++;
 

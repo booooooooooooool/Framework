@@ -1,23 +1,8 @@
-public class CounterApp
+public class CounterApp : Architecture<CounterApp>
 {
-    private static IOCContainer mContainer;
-
-    static void MakeSureContainer()
+    protected override void Init()
     {
-        if (mContainer == null)
-        {
-            mContainer = new IOCContainer();
-            Init();
-        }
-    }
-    static void Init()
-    {
-        mContainer.Register(new  CountModel());
-    }
-
-    public static T Get<T>() where T : class
-    {
-        MakeSureContainer();
-        return mContainer.Get<T>();
+        RegisterModel<ICounterModel>(new CountModel());
+        RegisterUtility<IStorage>(new PlayerPrefsStorage());
     }
 }

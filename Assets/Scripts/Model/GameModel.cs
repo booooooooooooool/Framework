@@ -1,14 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameModel
+public interface IGameModel
 {
-    public BindableProperty<int> KillCount = new BindableProperty<int> { Value = 0 };
+    BindableProperty<int> KillCount { get; }
 
-    public BindableProperty<int> Gold = new BindableProperty<int> { Value = 0 };
+    BindableProperty<int> Gold { get; }
 
-    public BindableProperty<int> Score = new BindableProperty<int> { Value = 0 };
+    BindableProperty<int> Score { get; }
 
-    public BindableProperty<int> BestScore = new BindableProperty<int> { Value = 0 };
+    BindableProperty<int> BestScore { get; }
+}
+
+
+public class GameModel : IGameModel
+{
+    public BindableProperty<int> KillCount { get; } = new BindableProperty<int> { Value = 0 };
+
+    public BindableProperty<int> Gold { get; } = new BindableProperty<int> { Value = 0 };
+
+    public BindableProperty<int> Score { get; } = new BindableProperty<int> { Value = 0 };
+
+    public BindableProperty<int> BestScore { get; } = new BindableProperty<int> { Value = 0 };
 }

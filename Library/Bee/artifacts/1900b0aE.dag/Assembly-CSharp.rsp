@@ -118,8 +118,8 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/Users/HP/Documents/unity/SiKi(KuangJia)/Library/PackageCache/com.unity.testtools.codecoverage@1.2.3/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"C:/Users/HP/Documents/unity/SiKi(KuangJia)/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"E:/hjy/UnityProject/SiKi(KuangJia)/Library/PackageCache/com.unity.testtools.codecoverage@1.2.3/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"E:/hjy/UnityProject/SiKi(KuangJia)/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"E:/Program Files/unity/2021.3.26f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"E:/Program Files/unity/2021.3.26f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"E:/Program Files/unity/2021.3.26f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -348,6 +348,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/IOC/DIPExample.cs"
 "Assets/IOC/IOCContainer.cs"
 "Assets/IOC/IOCExample.cs"
 "Assets/Scripts/Beibao/Beibao.cs"
@@ -365,6 +366,9 @@
 "Assets/Scripts/Command/KillEnemyCommand.cs"
 "Assets/Scripts/Command/StartGameCommand.cs"
 "Assets/Scripts/CounterApp/CounterApp.cs"
+"Assets/Scripts/Framework/Architecture/Architecture.cs"
+"Assets/Scripts/Framework/Architecture/IBelongToArchitecture.cs"
+"Assets/Scripts/Framework/Architecture/IModel.cs"
 "Assets/Scripts/Framework/BindableProperty/BindableProperty.cs"
 "Assets/Scripts/Framework/Command/ICommand.cs"
 "Assets/Scripts/Framework/Event/Event.cs"
@@ -380,6 +384,7 @@
 "Assets/Scripts/ViewController/AddCountCommand.cs"
 "Assets/Scripts/ViewController/CounterViewController.cs"
 "Assets/Scripts/ViewController/EditorCounterApp.cs"
+"Assets/Scripts/ViewController/IStorage.cs"
 "Assets/Scripts/ViewController/SubCountCommand.cs"
 "Assets/Test/talk.cs"
 -langversion:9.0

@@ -8,6 +8,11 @@ public class EditorCounterApp : EditorWindow
    [MenuItem("EditorConterApp/Open")]
    static void Open()
     {
+        CounterApp.OnRegisterPatch += app => 
+        {
+            app.RegisterUtility<IStorage>(new EditorPrefsStorage());
+        };
+
         var window = GetWindow<EditorCounterApp>();
         window.position = new Rect(x: 100, y: 100, width: 400, height: 600);
         window.titleContent = new GUIContent(text:nameof(EditorCounterApp));
@@ -21,7 +26,7 @@ public class EditorCounterApp : EditorWindow
                 .Execute();
         }
 
-        //GUILayout.Label(text:CountModel.Instance.Count.Value.ToString());
+        GUILayout.Label(CounterApp.Get<ICounterModel>().Count.Value.ToString());
 
         if (GUILayout.Button(text:"-"))
         {

@@ -13,7 +13,7 @@ public class PointGame
 
     static void Init()
     {
-        mContainer.Register(new GameModel());   
+        mContainer.Register<IGameModel>(new GameModel());   
     }
 
     public static T Get<T>() where T : class
